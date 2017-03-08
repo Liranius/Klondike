@@ -7,19 +7,16 @@ var gulp = require("gulp");
 /** copy task */
 gulp.task("moveHtmls", function () {
     gulp.src("./src/**/*.html", { base: "./src" })
-        .pipe(gulp.dest("./docs"))
         .pipe(gulp.dest("../../liranius.github.io/Klondike"));
 });
 
 gulp.task("moveJsLibs", function () {
     gulp.src("./src/public/js/*.js", { base: "./src" })
-        .pipe(gulp.dest("./docs"))
         .pipe(gulp.dest("../../liranius.github.io/Klondike"));
 });
 
 gulp.task("moveImgs", function () {
     gulp.src("./src/*.jpg", { base: "./src" })
-        .pipe(gulp.dest("./docs"))
         .pipe(gulp.dest("../../liranius.github.io/Klondike"));
 });
 
@@ -45,7 +42,6 @@ gulp.task("compSass", function () {
             includeContent: false,
             sourceRoot: "source"
         }))
-        .pipe(gulp.dest("./docs"))
         .pipe(gulp.dest("../../liranius.github.io/Klondike"));
 });
 
@@ -71,7 +67,6 @@ gulp.task("compTS", function () {
             includeContent: false,
             sourceRoot: 'source'
         }))
-        .pipe(gulp.dest("./docs"))
         .pipe(gulp.dest("../../liranius.github.io/Klondike"));
 });
 
