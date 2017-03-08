@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "System",
+    "outDir": "../../../site/game/Klondike/",
+//    "outFile": "../../js/klondike.js",
+
+    "target": "es5",
+    "sourceMap": true,
+    "removeComments": true
+//    "allowJs": true
+  },
+//  "files": [
+//    "Cards.ts",
+//    "CardMoves.ts",
+//    "debugJson.ts"
+//  ]
+  "include": [
+    "./*"
+  ]
+//  "exclude": [
+//    "node_modules"
+//  ]
+}

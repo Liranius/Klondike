@@ -1,0 +1,22 @@
+{
+  "name": "klondike",
+  "version": "1.0.0",
+  "description": "Klondike game",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liranius",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.3.0",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-typescript": "^3.1.5",
+    "gulp-uglify": "^2.0.1",
+    "postcss": "^5.2.15",
+    "typescript": "^2.2.1"
+  }
+}

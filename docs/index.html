@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Klondike</title>
+    <meta charset = "utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <link rel="stylesheet" type="text/css" href="/klondike/public/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="/klondike/public/js/mixin.js"></script>
+</head>
+<body>
+    <div id="desk">
+        <div id="card-pile" class="bordered-card-pile"></div>
+        <div id="abandoned-card-pile" class="borderless-card-pile"></div>
+
+        <div id="solve" class="button-wrapper hide">
+            <div id="solve-btn" class="button">
+                <h1>√</h1>
+                <p>Solve</p>
+            </div>
+        </div>
+
+        <div id="finish-stack-0" class="finish-stack bordered-card-pile"></div>
+        <div id="finish-stack-1" class="finish-stack bordered-card-pile"></div>
+        <div id="finish-stack-2" class="finish-stack bordered-card-pile"></div>
+        <div id="finish-stack-3" class="finish-stack bordered-card-pile"></div>
+
+        <div id="covered-stack-0" class="borderless-card-pile covered-stack"></div>
+        <div id="covered-stack-1" class="borderless-card-pile covered-stack"></div>
+        <div id="covered-stack-2" class="borderless-card-pile covered-stack"></div>
+        <div id="covered-stack-3" class="borderless-card-pile covered-stack"></div>
+        <div id="covered-stack-4" class="borderless-card-pile covered-stack"></div>
+        <div id="covered-stack-5" class="borderless-card-pile covered-stack"></div>
+        <div id="covered-stack-6" class="borderless-card-pile covered-stack"></div>
+    </div>
+    <div id="redeal" class="button-wrapper">
+        <div id="redeal-btn" class="button">
+            <h1>+</h1>
+            <p>Redeal</p>
+        </div>
+    </div>
+    <div id="recall" class="button-wrapper">
+        <div id="recall-btn" class="button">
+            <h1>←</h1>
+            <p>Recall</p>
+        </div>
+    </div>
+</body>
+
+<!-- sys import -->
+<script src="/klondike/public/js/system.js"></script>
+<script src="/klondike/public/js/systemjs.config.js"></script>
+<script src="/klondike/public/js/app.js"></script>
+</html>

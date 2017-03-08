@@ -1,0 +1,703 @@
+body {
+  height: 100vh;
+  background: steelblue url("blueback.jpg") fixed top left;
+  @media only screen and (max-aspect-ratio: 4/3) {
+    background-size: 21vw 14vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    background-size: calc(21vh * 4 / 3) calc(14vh * 4 / 3);
+  }
+}
+
+/*card styles*/
+.poker-card {
+  position: absolute;
+  box-sizing: border-box;
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    box-shadow: 0.1vw 0.1vw 0.3vw #222222;
+    border: 0.3vw solid white;
+    border-radius: 0.5vw;
+    background-size: 15vw 20vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    box-shadow: calc(0.1vh * 4 / 3) calc(0.1vh * 4 / 3) calc(0.3vh * 4 / 3) #222222;
+    border: calc(0.3vh * 4 / 3) solid white;
+    border-radius: calc(0.5vh * 4 / 3);
+    background-size: calc(15vh * 4 / 3) calc(20vh * 4 / 3);
+  }
+  width: 100%;
+  height: 100%;
+  background: green url("greenback.jpg") fixed top left;
+}
+
+.hide {
+  display: none;
+}
+
+.card-red {
+  color: red;
+}
+
+.card-black {
+  color: black;
+}
+
+.high-light {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    box-shadow: 0 0 1vw yellow;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    box-shadow: 0 0 calc(1vh * 4 / 3) yellow;
+  }
+}
+
+.card-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    //border: 0.2vw solid black;
+    border-radius: 0.2vw;
+    padding-top: 3vw;
+    font-size: 2vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    //border: calc(0.2vh * 4 / 3) solid black;
+    border-radius: calc(0.2vh * 4 / 3);
+    padding-top: calc(3vh * 4 / 3);
+    font-size: calc(2vh * 4 / 3);
+  }
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  p {
+    position: absolute;
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      width: 2vw;
+      height: 2.2vw;
+      line-height: 2.2vw;
+      font-size: 2vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      width: calc(2vh * 4 / 3);
+      height: calc(2.2vh * 4 / 3);
+      line-height: calc(2.2vh * 4 / 3);
+      font-size: calc(2vh * 4 / 3);
+    }
+    text-align: center;
+    font-weight: 900;
+
+    &:first-of-type {
+      //portrait
+      @media only screen and (max-aspect-ratio: 4/3) {
+        top: 0vw;
+        left: 0vw;
+      }
+      //landscape
+      @media only screen and (min-aspect-ratio: 4/3) {
+        top: calc(0vh * 4 / 3);
+        left: calc(0vh * 4 / 3);
+      }
+    }
+
+    &:last-of-type {
+      transform: rotate(180deg);
+      //portrait
+      @media only screen and (max-aspect-ratio: 4/3) {
+        right: 0vw;
+        bottom: 0vw;
+      }
+      //landscape
+      @media only screen and (min-aspect-ratio: 4/3) {
+        right: calc(0vh * 4 / 3);
+        bottom: calc(0vh * 4 / 3);
+      }
+    }
+  }
+
+  h1 {
+    position: absolute;
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      width: 2vw;
+      height: 2.2vw;
+      line-height: 2.2vw;
+      font-size: 2.4vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      width: calc(2vh * 4 / 3);
+      height: calc(2.2vh * 4 / 3);
+      line-height: calc(2.2vh * 4 / 3);
+      font-size: calc(2.4vh * 4 / 3);
+    }
+    text-align: center;
+    //font-weight: 900;
+
+    &:first-of-type {
+      //portrait
+      @media only screen and (max-aspect-ratio: 4/3) {
+        top: 2vw;
+        left: 0vw;
+      }
+      //landscape
+      @media only screen and (min-aspect-ratio: 4/3) {
+        top: calc(2vh * 4 / 3);
+        left: calc(0vh * 4 / 3);
+      }
+    }
+
+    &:last-of-type {
+      transform: rotate(180deg);
+      //portrait
+      @media only screen and (max-aspect-ratio: 4/3) {
+        right: 0vw;
+        bottom: 2vw;
+      }
+      //landscape
+      @media only screen and (min-aspect-ratio: 4/3) {
+        right: calc(0vh * 4 / 3);
+        bottom: calc(2vh * 4 / 3);
+      }
+    }
+  }
+}
+
+/*card pile styles*/
+.bordered-card-pile {
+  position: absolute;
+  box-sizing: border-box;
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    border: 0.2vw solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    border: calc(0.2vh * 4 / 3) solid rgba(255, 255, 255, 0.5);
+    border-radius: calc(0.5vh * 4 / 3);
+  }
+  width: 12%;
+  height: calc(12% * 4 / 3 * 4 / 3);
+}
+
+.borderless-card-pile {
+  position: absolute;
+  box-sizing: border-box;
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    border: 0.2vw solid rgba(255, 255, 255, 0);
+    border-radius: 0.5vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    border: calc(0.2vh * 4 / 3) solid rgba(255, 255, 255, 0);
+    border-radius: calc(0.5vh * 4 / 3);
+  }
+  width: 12%;
+  height: calc(12% * 4 / 3 * 4 / 3);
+}
+
+/*game element styles*/
+#desk {
+  position: relative;
+  margin: auto;
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    $height: 75vw;
+
+    width: $height * 4 / 3;
+    height: $height;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    $height: 100vh;
+
+    width: $height * 4 / 3;
+    height: $height;
+  }
+}
+
+#card-pile {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 2vw;
+    left: 2vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(2vh * 4 / 3);
+    left: calc(2vh * 4 / 3);
+  }
+}
+
+#abandoned-card-pile {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 2vw;
+    left: 16vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(2vh * 4 / 3);
+    left: calc(16vh * 4 / 3);
+  }
+}
+
+#finish-stack-0 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 2vw;
+    left: 44vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(2vh * 4 / 3);
+    left: calc(44vh * 4 / 3);
+  }
+}
+
+#finish-stack-1 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 2vw;
+    left: 58vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(2vh * 4 / 3);
+    left: calc(58vh * 4 / 3);
+  }
+}
+
+#finish-stack-2 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 2vw;
+    left: 72vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(2vh * 4 / 3);
+    left: calc(72vh * 4 / 3);
+  }
+}
+
+#finish-stack-3 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 2vw;
+    left: 86vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(2vh * 4 / 3);
+    left: calc(86vh * 4 / 3);
+  }
+}
+
+.covered-stack .poker-card {
+  $unit: 3;
+  &:nth-of-type(2) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 1vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 4vh / 3;
+    }
+  }
+
+  &:nth-of-type(3) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 2vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 2vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(4) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 3vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 3vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(5) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 4vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 4vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(6) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 5vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 5vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(7) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 6vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 6vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(8) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 7vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 7vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(9) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 8vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 8vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(10) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 9vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 9vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(11) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 10vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 10vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(12) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 11vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 11vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(13) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 12vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 12vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(14) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 13vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 13vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(15) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 14vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 14vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(16) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 15vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 15vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(17) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 16vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 16vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(18) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 17vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 17vh * 4 / 3;
+    }
+  }
+
+  &:nth-of-type(19) {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      top: $unit * 18vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      top: $unit * 18vh * 4 / 3;
+    }
+  }
+}
+
+#covered-stack-0 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 22vw;
+    left: 2vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(22vh * 4 / 3);
+    left: calc(2vh * 4 / 3);
+  }
+}
+
+#covered-stack-1 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 22vw;
+    left: 16vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(22vh * 4 / 3);
+    left: calc(16vh * 4 / 3);
+  }
+}
+
+#covered-stack-2 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 22vw;
+    left: 30vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(22vh * 4 / 3);
+    left: calc(30vh * 4 / 3);
+  }
+}
+
+#covered-stack-3 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 22vw;
+    left: 44vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(22vh * 4 / 3);
+    left: calc(44vh * 4 / 3);
+  }
+}
+
+#covered-stack-4 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 22vw;
+    left: 58vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(22vh * 4 / 3);
+    left: calc(58vh * 4 / 3);
+  }
+}
+
+#covered-stack-5 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 22vw;
+    left: 72vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(22vh * 4 / 3);
+    left: calc(72vh * 4 / 3);
+  }
+}
+
+#covered-stack-6 {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 22vw;
+    left: 86vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(22vh * 4 / 3);
+    left: calc(86vh * 4 / 3);
+  }
+}
+
+.button-wrapper {
+  position: absolute;
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    width: 8vw;
+    height: 4.5vw;
+    border: 0.1vw solid rgb(0, 128, 0);
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    width: calc(8vh * 4 / 3);
+    height: calc(4.5vh * 4 / 3);
+    border: calc(0.1vh * 4 / 3) solid rgb(0, 128, 0);
+  }
+}
+
+.button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    border: 0.1vw solid rgb(128, 192, 128);
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    border: calc(0.1vh * 4 / 3) solid rgb(128, 192, 128);
+  }
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+
+  h1 {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      margin-top: 0vw;
+      line-height: 2.4vw;
+      font-size: 2.2vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      margin-top: calc(0vh * 4 / 3);
+      line-height: calc(2.4vh * 4 / 3);
+      font-size: calc(2.2vh * 4 / 3);
+    }
+    text-align: center;
+    font-weight: 900;
+  }
+
+  p {
+    //portrait
+    @media only screen and (max-aspect-ratio: 4/3) {
+      margin-top: 0vw;
+      line-height: 1.8vw;
+      font-size: 1.6vw;
+    }
+    //landscape
+    @media only screen and (min-aspect-ratio: 4/3) {
+      margin-top: calc(0vh * 4 / 3);
+      line-height: calc(1.8vh * 4 / 3);
+      font-size: calc(1.6vh * 4 / 3);
+    }
+    text-align: center;
+    font-weight: 900;
+  }
+}
+
+#solve {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    top: 7.5vw;
+    left: 18vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    top: calc(7.5vh * 4 / 3);
+    left: calc(18vh * 4 / 3);
+  }
+}
+
+#redeal {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    bottom: 2vw;
+    left: 2vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    bottom: calc(2vh * 4 / 3);
+    left: calc(2vh * 4 / 3);
+  }
+}
+
+#recall {
+  //portrait
+  @media only screen and (max-aspect-ratio: 4/3) {
+    right: 2vw;
+    bottom: 2vw;
+  }
+  //landscape
+  @media only screen and (min-aspect-ratio: 4/3) {
+    right: calc(2vh * 4 / 3);
+    bottom: calc(2vh * 4 / 3);
+  }
+}
