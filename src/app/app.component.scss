@@ -23,6 +23,7 @@ main {
         height: $height;
     }
 }
+
 //landscape
 @media only screen and (min-aspect-ratio: $aspect-ratio-threshold) {
     main {

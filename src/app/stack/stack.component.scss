@@ -1,0 +1,57 @@
+@import "../../styles/shared";
+
+.stack {
+    border-style: solid;
+    width: 12%;
+    height: calc(12% * #{ $aspect-ratio-threshold } * #{ $aspect-ratio-threshold });
+}
+
+.uncovered,
+.covered,
+.column {
+    border-color: transparent;
+}
+
+.covered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:after {
+        content: "";
+        box-sizing: border-box;
+        border: solid $color-stack-border;
+        width: 70%;
+        height: calc(70% / (#{ $aspect-ratio-threshold }));
+    }
+}
+
+.foundation {
+    border-color: $color-stack-border;
+}
+
+//portrait
+@media only screen and (max-aspect-ratio: $aspect-ratio-threshold) {
+    .stack {
+        border-radius: 1.1vw;
+        border-width: 0.4vw;
+    }
+
+    .covered:after {
+        border-radius: 100vw;
+        border-width: 1.2vw;
+    }
+}
+
+//landscape
+@media only screen and (min-aspect-ratio: $aspect-ratio-threshold) {
+    .stack {
+        border-radius: calc(1.1vh * #{ $aspect-ratio-threshold });
+        border-width: calc(0.4vh * #{ $aspect-ratio-threshold });
+    }
+
+    .covered:after {
+        border-radius: calc(100vh * #{ $aspect-ratio-threshold });
+        border-width: calc(1.2vh * #{ $aspect-ratio-threshold });
+    }
+}
