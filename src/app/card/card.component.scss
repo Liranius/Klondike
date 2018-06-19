@@ -1,0 +1,64 @@
+@import "../../styles/shared";
+
+.card-wrapper {
+    box-sizing: border-box;
+    border: solid $color-card-border;
+    width: 12%;
+    height: calc(12% * #{ $aspect-ratio-threshold } * #{ $aspect-ratio-threshold });
+    font-family: sans-serif;
+    overflow: hidden;
+
+    .front,
+    .rear {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    .front {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        div {
+            text-align: center;
+            font-weight: 900;
+
+            &:last-of-type {
+                align-self: flex-end;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .rear {
+        background: url("../../assets/images/greenback.jpg") fixed top left;
+    }
+}
+
+//portrait
+@media only screen and (max-aspect-ratio: $aspect-ratio-threshold) {
+    .card-wrapper {
+        border-width: 0.2vw;
+        border-radius: 0.7vw;
+        font-size: 2vw;
+    }
+
+    .front {
+        padding: 0.3vw;
+    }
+}
+//landscape
+@media only screen and (min-aspect-ratio: $aspect-ratio-threshold) {
+    .card-wrapper {
+        border-width: calc(0.2vh * #{ $aspect-ratio-threshold });
+        border-radius: calc(0.7vh * #{ $aspect-ratio-threshold });
+        font-size: calc(2vh * #{ $aspect-ratio-threshold });
+    }
+
+    .front {
+        padding: calc(0.3vh * #{ $aspect-ratio-threshold });
+    }
+}

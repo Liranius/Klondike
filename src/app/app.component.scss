@@ -1,0 +1,38 @@
+@import "../styles/shared";
+
+main {
+    height: 100vh;
+    background: steelblue url("../assets/images/blueback.jpg") fixed top left;
+}
+
+.desk {
+    position: relative;
+    margin: auto;
+}
+
+//portrait
+@media only screen and (max-aspect-ratio: $aspect-ratio-threshold) {
+    main {
+        background-size: 21vw 14vw;
+    }
+
+    .desk {
+        $height: 75vw;
+
+        width: $height * 4 / 3;
+        height: $height;
+    }
+}
+//landscape
+@media only screen and (min-aspect-ratio: $aspect-ratio-threshold) {
+    main {
+        background-size: calc(21vh * 4 / 3) calc(14vh * 4 / 3);
+    }
+
+    .desk {
+        $height: 100vh;
+
+        width: $height * 4 / 3;
+        height: $height;
+    }
+}

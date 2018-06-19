@@ -1,0 +1,17 @@
+<div class="card-wrapper" [style.color]="color">
+    <ng-container *ngIf="flipped">
+        <div class="front">
+            <div>
+                {{ points }}<br/>
+                {{ suit }}
+            </div>
+            <div>
+                {{ points }}<br/>
+                {{ suit }}
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!flipped">
+        <div class="rear"></div>
+    </ng-container>
+</div>
